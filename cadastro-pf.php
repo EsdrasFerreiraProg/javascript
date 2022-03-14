@@ -19,11 +19,11 @@
 
         $i = 0;
 
-        $novo_nome1 = $cpf . " - ". $i++ . $extensao1;
-        $novo_nome2 = $cpf . " - ". $i++  . $extensao2;
-        $novo_nome3 = $cpf . " - ". $i++  . $extensao3;
-        $novo_nome4 = $cpf . " - ". $i++  . $extensao4;
-        $novo_nome5 = $cpf . " - ". $i++  . $extensao5;
+        $novo_nome1 = $cpf . "-". $i++ . $extensao1;
+        $novo_nome2 = $cpf . "-". $i++  . $extensao2;
+        $novo_nome3 = $cpf . "-". $i++  . $extensao3;
+        $novo_nome4 = $cpf . "-". $i++  . $extensao4;
+        $novo_nome5 = $cpf . "-". $i++  . $extensao5;
         
         
         $diretorio = "images/";
@@ -54,8 +54,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário | GN</title>
+    <title>Formulário SCIV</title>
     <style>
+       *{
+           box-sizing: border-box;
+       }
         body{
             font-family: Arial, Helvetica, sans-serif;
             background-image: url("laboratory-2815641_1920.jpg");
@@ -66,9 +69,20 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-120%,-54%);
             background-color: rgba(0, 0, 0, 0.6);
             padding: 15px;
+            border-radius: 15px;
+            width: 20%;
+        }
+        .box1{
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-10%,-54%);
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 14px;
             border-radius: 15px;
             width: 20%;
         }
@@ -82,6 +96,17 @@
             background-color: dodgerblue;
             border-radius: 8px;
         }
+        .tit{
+            border: 1px solid dodgerblue;
+            padding: 10px;
+            text-align: center;
+            background-color: dodgerblue;
+            position:absolute;
+            border-radius: 8px;
+            transform: translate(70%,10%);
+            
+        }
+
         .inputBox{
             position: relative;
         }
@@ -141,14 +166,15 @@
     </style>
 </head>
 <body>
+    <h1 class = "tit">Cadastre-se como Pessoa Física</h1>
 	<header>
 		<img class="imagem-ccea" src = "arte_logo_final1-2-300x300.jpg">
 	</header>
     <div class="box">
         <?php if ($msg != false) echo "<p> $msg </p>"; ?>
+        
         <form action="cadastro-pf.php" method="POST" enctype="multipart/form-data">
-            <fieldset>
-                <legend><b>Fórmulário de Cadastro</b></legend>
+            <section class = "onesection">
                 <br>
                 <div class="inputBox">
                     <input type="text" name="cpf" id="cpf" class="inputUser" required>
@@ -172,6 +198,23 @@
                 
                 <br><br>
                 <div class="inputBox">
+                    <input type="text" name="email" id="email" class="inputUser" required>
+                    <label for="email" class="labelInput">Email</label>
+                </div>
+				<br><br>
+               
+				<div class="inputBox">
+                    <input type="password" name="senha" id="senha" class="inputUser"  required>
+                    <label for="senha" class="labelInput" >Senha</label>
+                </div>
+			
+                <p id ="message"></p>
+                
+            </section>
+    </div>       
+            <section class = "twosection">
+    <div class = "box1">        
+            <div class="inputBox">
                     <input type="file" name="rgfrontal" id="rgfrontal" class="inputUser" required>
                     <label for="rgfrontal" class="labelInput"></label>
                 </div>
@@ -195,26 +238,17 @@
                     <input type="file" name="comprovanteresidencia" id="comprovanteresidencia" class="inputUser" required>
                     <label for="comprovanteresidencia" class="labelInput"></label>
                 </div>
-                
                 <br><br>
-                <div class="inputBox">
-                    <input type="text" name="email" id="email" class="inputUser" required>
-                    <label for="email" class="labelInput">Email</label>
-                </div>
-				<br><br>
-               
-				<div class="inputBox">
-                    <input type="password" name="senha" id="senha" class="inputUser"  required>
-                    <label for="senha" class="labelInput" >Senha</label>
-                </div>
-				<br><br>
-               
-                
-                <p id ="message"></p>
                 <input type="submit" name="submit" id="submit">
-            </fieldset>
+            </section>
+            
+    </div>         
+            <div>
+           
+            </div>
+            
         </form>
-	</div>
+	
 
    
 	<footer class = "imagem1">
