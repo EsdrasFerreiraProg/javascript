@@ -114,7 +114,7 @@
     <div class="box">
         <form action="cadastro.php" method="POST">
             <fieldset>
-                <legend><b>Fórmulário de Cadastro</b></legend>
+                <legend><b>Cadastre-se como PJ</b></legend>
                 <br>
                 <div class="inputBox">
                     <input type="text" name="cnpj" id="cnpj" class="inputUser" required>

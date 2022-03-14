@@ -3,7 +3,7 @@ function funcaoVaiPraCadastro(){
     window.location.assign("cadastro.php");
 }
 
-function funcaoVaiPraCadastroPF(){
+function funcaoVaiPraCadastroPf(){
     
     window.location.assign("cadastro-pf.php");
 }
